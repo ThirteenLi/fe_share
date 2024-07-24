@@ -1,0 +1,136 @@
+.h1 {
+  padding-bottom: 8px;
+  font-weight: 600;
+  padding-top: 24px;
+  font-size: 24px;
+  line-height: 32px;
+  color: #191919;
+}
+.h2 {
+  padding-bottom: 8px;
+  font-weight: 500;
+  padding-top: 32px;
+  font-size: 20px;
+  line-height: 28px;
+  color: #191919;
+}
+.p {
+  padding: 8px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #191919;
+}
+.pImportant {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 14px;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 12px;
+    border-radius: 100%;
+    background: #191919;
+    vertical-align: 2px;
+  }
+  & span {
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  & a {
+    text-decoration: underline;
+    color: #15d47b;
+    &:hover {
+      color: #09ad66;
+    }
+  }
+}
+
+.image {
+  padding: 16px 0;
+}
+
+.markdown {
+  word-break: break-word;
+  & h1 {
+    padding-bottom: 8px;
+    font-weight: 600;
+    padding-top: 24px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #191919;
+  }
+  & h2,
+  & h3,
+  & h4 {
+    padding-bottom: 8px;
+    font-weight: 500;
+    padding-top: 32px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #191919;
+  }
+  & p {
+    padding: 8px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #191919;
+  }
+  & li {
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    list-style: none;
+    padding: 8px 0;
+  }
+  & li strong {
+    font-weight: 600;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 12px;
+      border-radius: 100%;
+      background: #191919;
+      vertical-align: 2px;
+    }
+  }
+  & img {
+    padding: 16px 0;
+  }
+  & a {
+    text-decoration: underline;
+    color: #15d47b;
+    &:hover {
+      color: #09ad66;
+    }
+  }
+  & table {
+    margin: 16px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    tr {
+      border-bottom: 1px solid #f5f5f5;
+    }
+    th {
+      background-color: #fafafa;
+      padding: 16px 24px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+      color: #191919;
+    }
+    td {
+      padding: 16px 24px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #191919;
+    }
+  }
+}

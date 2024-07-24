@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "animate.css";
+
+html,
+body {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+}
+
+#root {
+  width: 100%;
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */
+}
+
+img {
+  max-width: none;
+}
+
+.animate__fadeInRightSelf {
+  animation: animate__fadeInRightSelf;
+}
+.animate__fadeInLeftSelf {
+  animation: animate__fadeInLeftSelf;
+}
+
+@keyframes animate__fadeInRightSelf {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animate__fadeInLeftSelf {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,85 @@
+variables:
+  CI_PRODUCTION_REGISTRY: harbor.changyinlive.com
+  CI_PRODUCTION_REGISTRY_USER: gitlab_ci
+  CI_PRODUCTION_REGISTRY_PASSWORD: Xunlei123acc
+  CI_REGISTRY: harbor.changyinlive.com
+  CI_REGISTRY_USER: gitlab_ci
+  CI_REGISTRY_PASSWORD: Xunlei123acc
+  DEV_DOMAIN_NAME: xops-office.dloverai.com
+  CI_BUILD_REF: ${CI_COMMIT_SHA}
+  CI_BUILD_REF_NAME: ${CI_COMMIT_REF_NAME}
+
+stages:
+  - build_docker 
+
+build_docker:
+   stage: build_docker
+   script:
+     - echo "Building docker image"
+     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/capell-saas-frontend
+     - docker_build.sh -p test -F web3_capell -G web3_capell -n web-frontend -s "docker build --build-arg SERVICE_NAME=\"web-frontend\""
+   tags:
+     - share
+
+#saas-bizsrv-test:
+#  stage: test
+#  script:
+#    - echo "Building docker image"
+#    - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-bizsrv
+#    - docker_build.sh -p test -F web3_capell -G web3_capell -n saas-bizsrv -s "docker build --build-arg SERVICE_NAME="bizsrv""
+#  tags:
+#    - share
+
+# saas-frontend-test:
+#   stage: test
+#   script:
+#     - echo "Building docker image"
+#     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-frontend
+#     - docker_build.sh -p test -F web3_capell -G web3_capell -n saas-frontend -s "docker build --build-arg SERVICE_NAME="frontend""
+#   tags:
+#     - share
+
+# saas-datawatch-test:
+#   stage: test
+#   script:
+#     - echo "Building docker image"
+#     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-datawatch
+#     - docker_build.sh -p test -F web3_capell -G web3_capell -n saas-datawatch -s "docker build --build-arg SERVICE_NAME="datawatch""
+#   tags:
+#     - share
+
+# saas-gateway-release:
+#   stage: release
+#   script:
+#     - echo "Building docker image"
+#     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-gateway
+#     - docker_build.sh -p release -F web3_capell -G web3_capell -n saas-gateway -s "docker build --build-arg SERVICE_NAME="gateway""
+#   tags:
+#     - share
+
+# saas-bizsrv-release:
+#   stage: release
+#   script:
+#     - echo "Building docker image"
+#     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-bizsrv
+#     - docker_build.sh -p release -F web3_capell -G web3_capell -n saas-bizsrv -s "docker build --build-arg SERVICE_NAME="bizsrv""
+#   tags:
+#     - share
+
+# saas-frontend-release:
+#   stage: release
+#   script:
+#     - echo "Building docker image"
+#     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-frontend
+#     - docker_build.sh -p release -F web3_capell -G web3_capell -n saas-frontend -s "docker build --build-arg SERVICE_NAME="frontend""
+#   tags:
+#     - share
+
+# saas-datawatch-release:
+#   stage: release
+#   script:
+#     - echo "Building docker image"
+#     - export CI_PROJECT_URL=https://gitlab.changyinlive.com/web3_capell/saas-datawatch
+#     - docker_build.sh -p release -F web3_capell -G web3_capell -n saas-datawatch -s "docker build --build-arg SERVICE_NAME="datawatch""
+#   tags:
+#     - share
