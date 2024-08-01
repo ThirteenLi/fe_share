@@ -1559,11 +1559,6 @@ delayed-stream@~1.0.0:
   resolved "https://registry.npmmirror.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
 
-deploy@1.0.0:
-  version "1.0.3"
-  resolved "http://npm.ixiaochuan.cn/deploy/-/deploy-1.0.3.tgz#ab846f5e228610054556d9b73df0b2f45af84fb0"
-  integrity sha512-muJVK8p8idCiE+8JaQzvGD+vS3KtoJYx6jLu0Bq36vl7bOJVpm9dZGgoHFi89kI88oHdwa32TUTZ0exYyT0KLQ==
-
 dequal@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npmmirror.com/dequal/-/dequal-2.0.3.tgz#2644214f1997d39ed0ee0ece72335490a7ac67be"

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    #container {
+      margin: 100px auto 0;
+      padding: 100px 0;
+      width: 500px;
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+    }
+    #items {
+      position: absolute;
+      height: 350px;
+      width: 100%;
+      left: 0;
+      transition: left 0.8s ease-in-out;
+    }
+    .item {
+      position: absolute;
+      height: 350px;
+      width: 500px;
+      left: 0;
+      top: 0;
+    }
+    .item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    #nums {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      bottom: 120px;
+    }
+    #nums li {
+      cursor: pointer;
+      background: #000;
+      color: #fff;
+      width: 30px;
+      line-height: 20px;
+      height: 20px;
+      text-align: center;
+    }
+    #nums li:hover {
+      color: aqua;
+    }
+    #nums .active {
+      color: aqua;
+    }
+    #left, #right {
+      position: absolute;
+      top: 50%;
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px;
+      text-align: center;
+      width: 30px;
+      color: #fff;
+      background-color: #232323;
+      cursor: pointer;
+      margin-top: -10px;
+    }
+    #left {
+      left: 0px;
+    }
+    #right {
+      right: 0px;
+    }
+    #auto {
+      position: absolute;
+      bottom: 0;
+      margin-top: 30px;
+      line-height: 30px;
+      font-size: 20px;
+      height: 30px;
+      left: 50%;
+      width: 100px;
+      margin-left: -50px;
+      background-color: #232323;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <ul id="items">
+      <li class="item"><img src="../imgs/bg-1.jpg" alt="" /></li>
+      <li class="item"><img src="../imgs/bg-2.jpg" alt="" /></li>
+      <li class="item"><img src="../imgs/bg-3.jpg" alt="" /></li>
+      <li class="item"><img src="../imgs/bg-4.jpg" alt="" /></li>
+    </ul>
+    <ol id="nums">
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ol>
+    <div id="left" onclick="playPrev()">&lt;</div>
+    <div id="right" onclick="playNext()">&gt;</div>
+    <div id="auto" onclick="startAutoPlay()">Toggle</div>
+  </div>
+  <script>
+    const oItems = document.getElementById("items")
+    const allItem = document.getElementsByClassName("item")
+    const oNums = document.getElementById("nums")
+    const allNum = document.querySelectorAll("#nums li")
+    let current = 0
+    let timer = 0
+
+    for(let i = 0; i < allItem.length; i++) {
+      allItem[i].style.left = i * 500 + "px"
+      allNum[i].setAttribute("data-index", i)
+    }
+
+    const afterChangeCurrent = () => {
+      oItems.style.left = current * -500 + "px"
+      allNum.forEach(element => {
+        element.classList = []
+      });
+      allNum[current].classList += "active"
+    }
+
+    const playNext = () => {
+      current = (current + 1) % allItem.length
+      afterChangeCurrent()
+    }
+
+    const playPrev = () => {
+      current = (current + allItem.length - 1) % allItem.length
+      afterChangeCurrent()
+    }
+
+    const stopAutoPlay = () => {
+      clearInterval(timer)
+    }
+
+    const startAutoPlay = () => {
+      if (timer) {
+        stopAutoPlay()
+      } else {
+        playNext()
+        timer = setInterval(() => {
+          playNext()
+        }, 3000)
+      }
+    }
+
+    oItems.addEventListener("click", playNext)
+
+    oNums.addEventListener("click", function (e) {
+      const index = parseInt(e.target.getAttribute("data-index"));
+      current = index
+      afterChangeCurrent()
+    })
+
+  </script>
+</body>
+</html>

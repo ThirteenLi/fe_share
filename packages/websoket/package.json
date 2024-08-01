@@ -42,7 +42,6 @@
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
     "dayjs-plugin-utc": "^0.1.2",
-    "deploy": "1.0.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -76,9 +75,7 @@
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "postinstall": "node postinstall.cjs",
     "prepare": "node prepare.cjs",
-    "preview": "vite preview",
-    "deploy": "yarn build:office && deploy dist",
-    "onlydeploy": "deploy dist"
+    "preview": "vite preview"
   },
   "type": "module",
   "version": "0.4.3"

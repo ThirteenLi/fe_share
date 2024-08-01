@@ -3,7 +3,6 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "url";
 import svgr from "vite-plugin-svgr";
-import { vitePluginForArco } from "@arco-plugins/vite-react";
 
 export default defineConfig({
   server: {
@@ -16,7 +15,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [nodeResolve(), react(), svgr(), vitePluginForArco()],
+  plugins: [nodeResolve(), react(), svgr()],
   optimizeDeps: {
     esbuildOptions: {
       define: {

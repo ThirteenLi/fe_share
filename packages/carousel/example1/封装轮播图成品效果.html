@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+  }
+  li {
+    list-style: none;
+  }
+  #container {
+    margin: 100px auto 0;
+    padding: 100px 0;
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+  }
+  #items {
+    position: absolute;
+    height: 350px;
+    width: 100%;
+    /* left: 0; */
+  }
+  .ani {
+    transition: left 0.8s ease-in-out;
+  }
+  .item {
+    position: absolute;
+    height: 350px;
+    width: 500px;
+    left: 0;
+    top: 0;
+  }
+  .item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  #nums {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    bottom: 120px;
+  }
+  #nums div {
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    width: 30px;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+  }
+  #nums div:hover {
+    color: aqua;
+  }
+  #nums .active {
+    color: aqua;
+  }
+  #nums .hidden {
+    display: none;
+  }
+  #left, #right {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    width: 30px;
+    color: #fff;
+    background-color: #232323;
+    cursor: pointer;
+    margin-top: -10px;
+  }
+  #left {
+    left: 0px;
+  }
+  #right {
+    right: 0px;
+  }
+  #auto {
+    position: absolute;
+    bottom: 0;
+    margin-top: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    height: 30px;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    background-color: #232323;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="items" class="ani">
+      <img class="item" src="../imgs/bg-1.jpg" alt="">
+      <img class="item" src="../imgs/bg-2.jpg" alt="">
+      <img class="item" src="../imgs/bg-3.jpg" alt="">
+      <img class="item" src="../imgs/bg-4.jpg" alt="">
+      <img class="item" src="../imgs/bg-5.jpg" alt="">
+      <img class="item" src="../imgs/bg-6.jpg" alt="">
+      <img class="item" src="../imgs/bg-7.jpg" alt="">
+      <img class="item" src="../imgs/bg-8.jpg" alt="">
+      <img class="item" src="../imgs/bg-9.jpg" alt="">
+      <img class="item" src="../imgs/bg-10.jpg" alt="">
+      <img class="item" src="../imgs/bg-11.jpg" alt="">
+      <img class="item" src="../imgs/bg-12.jpg" alt="">
+      <img class="item" src="../imgs/bg-13.jpg" alt="">
+      <img class="item" src="../imgs/bg-14.jpg" alt="">
+      <img class="item" src="../imgs/bg-15.jpg" alt="">
+      <img class="item" src="../imgs/bg-16.jpg" alt="">
+    </div>
+    <div id="nums">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+      <div>13</div>
+      <div>14</div>
+      <div>15</div>
+      <div>16</div>
+    </div>
+    <div id="left">&lt;</div>
+    <div id="right">&gt;</div>
+  </div>
+  <script src="./carousel.js"></script>
+  <script>
+    const oItems = document.getElementById("items")
+    const oNums = document.getElementById("nums")
+    const oLeft = document.getElementById("left")
+    const oRight = document.getElementById("right")
+
+    loadCarousel({
+      aniDom: oItems,
+      leftBtnDom: oLeft,
+      rightBtnDom: oRight,
+      navDom: oNums,
+      aniClass: "ani",
+      activeNumClass: "active",
+      distance: 500,
+      navDiff: 2,
+      defaultIndex: 0,
+      length: 16,
+      autoplay: false,
+      autoTime: 3000,
+    })
+
+    // oLeft.style.display = "none"
+    // oRight.style.display = "none"
+    // oNums.style.display = "none"
+    // loadCarousel({
+    //   aniDom: oItems,
+    //   aniClass: "ani",
+    //   activeNumClass: "active",
+    //   distance: 500,
+    //   navDiff: 2,
+    //   defaultIndex: 0,
+    //   length: 3,
+    //   autoplay: true,
+    //   autoTime: 1000,
+    // })
+
+    // oNums.style.display = "none"
+    // loadCarousel({
+    //   aniDom: oItems,
+    //   aniClass: "ani",
+    //   activeNumClass: "active",
+    //   distance: 500,
+    //   defaultIndex: 2,
+    //   length: 4,
+    //   leftBtnDom: oLeft,
+    //   rightBtnDom: oRight,
+    // })
+
+
+  </script>
+</body>
+</html>
