@@ -18,7 +18,7 @@
     padding: 100px 0;
     width: 500px;
     height: 350px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
   }
   #items {
@@ -156,35 +156,35 @@
     const oLeft = document.getElementById("left")
     const oRight = document.getElementById("right")
 
-    loadCarousel({
-      aniDom: oItems,
-      leftBtnDom: oLeft,
-      rightBtnDom: oRight,
-      navDom: oNums,
-      aniClass: "ani",
-      activeNumClass: "active",
-      distance: 500,
-      navDiff: 2,
-      defaultIndex: 0,
-      length: 16,
-      autoplay: false,
-      autoTime: 3000,
-    })
-
-    // oLeft.style.display = "none"
-    // oRight.style.display = "none"
-    // oNums.style.display = "none"
     // loadCarousel({
     //   aniDom: oItems,
+    //   leftBtnDom: oLeft,
+    //   rightBtnDom: oRight,
+    //   navDom: oNums,
     //   aniClass: "ani",
     //   activeNumClass: "active",
     //   distance: 500,
     //   navDiff: 2,
     //   defaultIndex: 0,
-    //   length: 3,
-    //   autoplay: true,
-    //   autoTime: 1000,
+    //   length: 16,
+    //   autoplay: false,
+    //   autoTime: 3000,
     // })
+
+    oLeft.style.display = "none"
+    oRight.style.display = "none"
+    oNums.style.display = "none"
+    loadCarousel({
+      aniDom: oItems,
+      aniClass: "ani",
+      activeNumClass: "active",
+      distance: 500,
+      navDiff: 2,
+      defaultIndex: 0,
+      length: 10,
+      autoplay: true,
+      autoTime: 1000,
+    })
 
     // oNums.style.display = "none"
     // loadCarousel({
